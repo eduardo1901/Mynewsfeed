@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">My news Feed</a>
+    <button (click)="LogOut()" class= "text-rigth">LogOut</button>
+    
+  </nav>
+
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <div *ngFor="let new of news">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{new.urlToImage}}" alt="Card image cap">
+                <div class="card-body">
+
+                  <h5 class="card-title">{{new.title}}</h5>
+
+                  <h6 class="card-subtitle mb-2 text-muted">{{new.description}}</h6>
+                  <p class="card-text">{{new.content}} </p>
+                  <a href="{{new.url}}" class="card-link">Ampliar</a>
+                  <a class="card-link">{{new.publishedAt | date }}</a>
+                </div>
+              </div>
+
+        </div>
+    </div>
+  </div>
